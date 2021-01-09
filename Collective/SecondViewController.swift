@@ -31,27 +31,28 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             
             feedItems = items
             self.listTableView.reloadData()
-        }
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            // Return the number of feed items
-            return feedItems.count
-            
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-            // Retrieve cell
-            let cellIdentifier: String = "BasicCell"
-            let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
-            // Get the location to be shown
-            let item: TestTableModel = feedItems[indexPath.row] as! TestTableModel
-            // Get references to labels of cell
-            myCell.textLabel!.text = item.name1
-            
-            return myCell
-        }
-        
     }
+        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of feed items
+        return feedItems.count
+            
+    }
+        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
+        // Retrieve cell
+        let cellIdentifier: String = "BasicCell"
+        let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        // Get the location to be shown
+        let item: TestTableModel = feedItems[indexPath.row] as! TestTableModel
+        // Get references to labels of cell
+        myCell.textLabel!.text = item.name1
+            
+        return myCell
+    }
+}
+
+    
 
 
