@@ -48,7 +48,7 @@ class SignUpViewController: UIViewController {
                     // display an alert if there is an error inside the DispatchQueue.main.async
                     DispatchQueue.main.async
                     {
-                            let alert = UIAlertController(title: "Upload Didn't Work?", message: "Looks like the connection to the server didn't work. Do you have Internet access?", preferredStyle: .alert)
+                            let alert = UIAlertController(title: "Connection Failed", message: "Looks like the connection to the server didn't work. Do you have Internet access?", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                             self.present(alert, animated: true, completion: nil)
                     }
@@ -56,30 +56,8 @@ class SignUpViewController: UIViewController {
                 else
                 {
                     if let unwrappedData = data {
-                        
                         let returnedData = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue) // Response from web server hosting the database
-                        print(returnedData)
-                        if returnedData == "1" // insert into database worked
-                        {
-
-                            // display an alert if no error and database insert worked (return = 1) inside the DispatchQueue.main.async
-                            DispatchQueue.main.async
-                            {
-                                let alert = UIAlertController(title: "Upload OK?", message: "Looks like the upload and insert into the database worked.", preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                        }
-                        else
-                        {
-                            // display an alert if an error and database insert didn't work (return != 1) inside the DispatchQueue.main.async
-                            DispatchQueue.main.async
-                            {
-                                let alert = UIAlertController(title: "Upload Didn't Work", message: "Looks like the insert into the database did not work.", preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                        }
+                        print(returnedData as Any)
                     }
                 }
             }

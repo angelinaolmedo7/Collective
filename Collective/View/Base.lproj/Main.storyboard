@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="g1A-V2-E4N">
             <objects>
-                <viewController id="74k-1f-D6Z" sceneMemberID="viewController">
+                <viewController id="74k-1f-D6Z" customClass="AuthViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E7x-XG-Kvn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,10 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVg-3D-d9E">
                                         <rect key="frame" x="0.0" y="169" width="354" height="30"/>
-                                        <state key="normal" title="Log In"/>
+                                        <state key="normal" title="Sign In"/>
+                                        <connections>
+                                            <action selector="signInPressed:" destination="74k-1f-D6Z" eventType="touchUpInside" id="WKW-uI-CRb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDC-Na-Amq">
                                         <rect key="frame" x="0.0" y="219" width="354" height="30"/>
@@ -241,6 +244,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ngS-Au-j5N"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="FxG-Rc-vZ6" id="2VB-Kc-hBu"/>
+                        <outlet property="usernameTextField" destination="9zb-tR-O0W" id="gIK-rv-kSR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOG-pw-GJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,7 +274,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Z5H-Ck-wv7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="De8-Re-82n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wkK-0z-lv7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="r0d-H6-RmF"/>
@@ -280,6 +286,7 @@
                         <segue destination="akB-Yb-QHU" kind="relationship" relationship="rootViewController" id="mxd-qd-QI7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="De8-Re-82n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-500.00000000000006" y="-798.21428571428567"/>
         </scene>
