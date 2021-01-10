@@ -18,6 +18,7 @@
 		2971779225A8695F00A32278 /* CollectiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971779125A8695F00A32278 /* CollectiveUITests.swift */; };
 		297177A025A977C900A32278 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971779F25A977C900A32278 /* HomeModel.swift */; };
 		297177A225A977DD00A32278 /* TestTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177A125A977DD00A32278 /* TestTableModel.swift */; };
+		297177A725AA9BA900A32278 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177A625AA9BA900A32278 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2971779325A8695F00A32278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2971779F25A977C900A32278 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		297177A125A977DD00A32278 /* TestTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableModel.swift; sourceTree = "<group>"; };
+		297177A625AA9BA900A32278 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				2971776D25A8695C00A32278 /* AppDelegate.swift */,
 				2971776F25A8695C00A32278 /* SceneDelegate.swift */,
 				2971777125A8695C00A32278 /* FirstViewController.swift */,
+				297177A625AA9BA900A32278 /* SignUpViewController.swift */,
 				2971777325A8695C00A32278 /* SecondViewController.swift */,
 				2971779F25A977C900A32278 /* HomeModel.swift */,
 				297177A125A977DD00A32278 /* TestTableModel.swift */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2971777425A8695C00A32278 /* SecondViewController.swift in Sources */,
+				297177A725AA9BA900A32278 /* SignUpViewController.swift in Sources */,
 				2971777225A8695C00A32278 /* FirstViewController.swift in Sources */,
 				2971776E25A8695C00A32278 /* AppDelegate.swift in Sources */,
 				297177A025A977C900A32278 /* HomeModel.swift in Sources */,

@@ -10,7 +10,7 @@
         <!--Sign Up-->
         <scene sceneID="Enf-4l-t3O">
             <objects>
-                <viewController id="akB-Yb-QHU" sceneMemberID="viewController">
+                <viewController id="akB-Yb-QHU" customClass="SignUpViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XvH-Nj-s1G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBK-48-oSW">
                                         <rect key="frame" x="0.0" y="108" width="354" height="30"/>
                                         <state key="normal" title="Create New Account"/>
+                                        <connections>
+                                            <action selector="createNewAccount:" destination="akB-Yb-QHU" eventType="touchUpInside" id="Ybw-iy-Umv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -66,6 +69,10 @@
                         <viewLayoutGuide key="safeArea" id="Iah-8u-HqX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="ukt-LM-WUM"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="wHA-cf-gDY" id="lup-CV-xWi"/>
+                        <outlet property="usernameTextField" destination="V7O-dk-FjP" id="qkv-ce-H5I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75j-RC-CTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
