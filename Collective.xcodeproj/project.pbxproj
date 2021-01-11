@@ -24,6 +24,7 @@
 		297177B025AAB80A00A32278 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177AF25AAB80A00A32278 /* AuthModel.swift */; };
 		297177B225AC1B5F00A32278 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B125AC1B5F00A32278 /* User.swift */; };
 		297177B425AC21BA00A32278 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B325AC21BA00A32278 /* ProfileViewController.swift */; };
+		297177B625AC56D500A32278 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B525AC56D500A32278 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		297177AF25AAB80A00A32278 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		297177B125AC1B5F00A32278 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		297177B325AC21BA00A32278 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		297177B525AC56D500A32278 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				297177AD25AAB76500A32278 /* Network.swift */,
 				2971779F25A977C900A32278 /* HomeModel.swift */,
 				297177B125AC1B5F00A32278 /* User.swift */,
+				297177B525AC56D500A32278 /* Category.swift */,
 				297177AF25AAB80A00A32278 /* AuthModel.swift */,
 				297177A125A977DD00A32278 /* TestTableModel.swift */,
 			);
@@ -319,6 +322,7 @@
 				297177B425AC21BA00A32278 /* ProfileViewController.swift in Sources */,
 				297177A025A977C900A32278 /* HomeModel.swift in Sources */,
 				297177A225A977DD00A32278 /* TestTableModel.swift in Sources */,
+				297177B625AC56D500A32278 /* Category.swift in Sources */,
 				2971777025A8695C00A32278 /* SceneDelegate.swift in Sources */,
 				297177B025AAB80A00A32278 /* AuthModel.swift in Sources */,
 				297177B225AC1B5F00A32278 /* User.swift in Sources */,
