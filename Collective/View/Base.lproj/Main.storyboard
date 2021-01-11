@@ -121,7 +121,7 @@
             </objects>
             <point key="canvasLocation" x="1493" y="-430"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--User-->
         <scene sceneID="sZF-I9-vwq">
             <objects>
                 <viewController id="ruR-4X-y2a" customClass="ProfileViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,7 +150,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gpN-AK-PnG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="person.fill" catalog="system" id="21v-7q-gpS"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="21v-7q-gpS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pu-XZ-V9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
