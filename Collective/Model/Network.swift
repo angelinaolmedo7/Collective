@@ -19,7 +19,7 @@ class Network: NSObject, URLSessionDataDelegate {
     
     let urlPath = "http://www.collectiveapp.site/signin.php"
  
-    func downloadItems() {
+    func downloadItems(urlPath: String) {
         
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
