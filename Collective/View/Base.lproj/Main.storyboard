@@ -416,6 +416,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SGb-cG-AwX" kind="show" identifier="postSegue" trigger="accessoryAction" id="oKN-cp-xic"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -437,6 +440,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeh-7X-Zt2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2301" y="761"/>
+        </scene>
+        <!--Topics-->
+        <scene sceneID="TbI-7q-lRK">
+            <objects>
+                <viewController id="SGb-cG-AwX" customClass="PostsViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sCm-Rv-Pvg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u8u-Go-H29">
+                                <rect key="frame" x="30" y="152" width="354" height="631"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="huV-L1-nYG">
+                                        <rect key="frame" x="0.0" y="28" width="354" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="huV-L1-nYG" id="luj-dO-XbC">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnR-4r-k9G">
+                                <rect key="frame" x="20" y="108" width="374" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ewa-LC-rke" firstAttribute="trailing" secondItem="u8u-Go-H29" secondAttribute="trailing" constant="30" id="6m9-8Q-QNz"/>
+                            <constraint firstItem="u8u-Go-H29" firstAttribute="top" secondItem="ZnR-4r-k9G" secondAttribute="bottom" constant="20" id="Dwt-ID-tcF"/>
+                            <constraint firstItem="ewa-LC-rke" firstAttribute="trailing" secondItem="ZnR-4r-k9G" secondAttribute="trailing" constant="20" id="MlB-e6-m4d"/>
+                            <constraint firstItem="u8u-Go-H29" firstAttribute="leading" secondItem="ewa-LC-rke" secondAttribute="leading" constant="30" id="cRN-Cd-lWp"/>
+                            <constraint firstItem="ewa-LC-rke" firstAttribute="bottom" secondItem="u8u-Go-H29" secondAttribute="bottom" constant="30" id="fSS-kA-PFQ"/>
+                            <constraint firstItem="ZnR-4r-k9G" firstAttribute="leading" secondItem="ewa-LC-rke" secondAttribute="leading" constant="20" id="gS9-ft-zxd"/>
+                            <constraint firstItem="ZnR-4r-k9G" firstAttribute="top" secondItem="ewa-LC-rke" secondAttribute="top" constant="20" id="ugK-WA-jhn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ewa-LC-rke"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Topics" id="2Pb-8g-gYx"/>
+                    <connections>
+                        <outlet property="listTableView" destination="u8u-Go-H29" id="L4s-hN-ZCA"/>
+                        <outlet property="topicHeadline" destination="ZnR-4r-k9G" id="bSm-nF-4sS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXJ-rV-eGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3082.608695652174" y="760.71428571428567"/>
         </scene>
     </scenes>
     <resources>

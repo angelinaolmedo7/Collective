@@ -13,6 +13,7 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
     
     var selectedCategory : Category = Category()
     var feedItems: NSArray = NSArray()
+    var selectedItem : Topic = Topic()
 
     @IBOutlet weak var listTableView: UITableView!
     
@@ -48,6 +49,24 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         myCell.textLabel!.text = item.topic_subject
             
         return myCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Set selected location to var
+        selectedItem = feedItems[indexPath.row] as! Topic
+        // Manually call segue to detail view controller
+        self.performSegue(withIdentifier: "postSegue", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Get reference to the destination view controller
+        let detailVC  = segue.destination as! PostsViewController
+        // Set the property to the selected location so when the view for
+        // detail view controller loads, it can access that property to get the feeditem obj
+        detailVC.selectedTopic = selectedItem
     }
 }
 
