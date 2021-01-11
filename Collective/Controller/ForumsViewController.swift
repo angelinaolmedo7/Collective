@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-class ForumsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeModelProtocol {
+class ForumsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NetworkProtocol {
     
     var feedItems: NSArray = NSArray()
-    var selectedTest: TestTableModel = TestTableModel()
+    var selectedItem : Category = Category()
 
+    @IBOutlet weak var listTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,12 @@ class ForumsViewController: UIViewController, UITableViewDataSource, UITableView
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         
-        let homeModel = HomeModel()
-        homeModel.delegate = self
-        homeModel.downloadItems()
+        let categories = Categories()
+        categories.delegate = self
+        categories.downloadItems()
     }
 
     func itemsDownloaded(items: NSArray) {
-            
             feedItems = items
             self.listTableView.reloadData()
     }
@@ -36,20 +36,36 @@ class ForumsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of feed items
         return feedItems.count
-            
-    }
+        }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
         // Retrieve cell
-        let cellIdentifier: String = "BasicCell"
+        let cellIdentifier: String = "CatCell"
         let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
-        // Get the location to be shown
-        let item: TestTableModel = feedItems[indexPath.row] as! TestTableModel
+        // Get the category to be shown
+        let item: Category = feedItems[indexPath.row] as! Category
         // Get references to labels of cell
-        myCell.textLabel!.text = item.name1
+        myCell.textLabel!.text = item.cat_name
             
         return myCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Set selected location to var
+        selectedItem = feedItems[indexPath.row] as! Category
+        // Manually call segue to detail view controller
+        self.performSegue(withIdentifier: "topicSegue", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Get reference to the destination view controller
+        let detailVC  = segue.destination as! TopicsViewController
+        // Set the property to the selected location so when the view for
+        // detail view controller loads, it can access that property to get the feeditem obj
+        detailVC.selectedCategory = selectedItem
     }
 }
 

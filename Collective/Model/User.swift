@@ -70,7 +70,7 @@ class User: NSObject {
            
         let user = User()
            
-        //the following insures none of the JsonElement values are nil through optional binding
+        //the following ensures none of the JsonElement values are nil through optional binding
         if let user_id = jsonElement["user_id"] as? NSString,
             let user_name = jsonElement["user_name"] as? NSString,
 //                let uesr_date = jsonElement["user_date"] as? Date,

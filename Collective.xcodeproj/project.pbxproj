@@ -26,6 +26,10 @@
 		297177B425AC21BA00A32278 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B325AC21BA00A32278 /* ProfileViewController.swift */; };
 		297177B625AC56D500A32278 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B525AC56D500A32278 /* Category.swift */; };
 		297177B825AC64A600A32278 /* ForumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B725AC64A500A32278 /* ForumsViewController.swift */; };
+		297177BA25AC66F200A32278 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177B925AC66F200A32278 /* Categories.swift */; };
+		297177BC25AC774200A32278 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177BB25AC774200A32278 /* Topic.swift */; };
+		297177BE25AC774D00A32278 /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177BD25AC774D00A32278 /* Topics.swift */; };
+		297177C025AC7B8000A32278 /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177BF25AC7B8000A32278 /* TopicsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		297177B325AC21BA00A32278 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		297177B525AC56D500A32278 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		297177B725AC64A500A32278 /* ForumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumsViewController.swift; sourceTree = "<group>"; };
+		297177B925AC66F200A32278 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		297177BB25AC774200A32278 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		297177BD25AC774D00A32278 /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
+		297177BF25AC7B8000A32278 /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +165,9 @@
 				2971779F25A977C900A32278 /* HomeModel.swift */,
 				297177B125AC1B5F00A32278 /* User.swift */,
 				297177B525AC56D500A32278 /* Category.swift */,
+				297177B925AC66F200A32278 /* Categories.swift */,
+				297177BB25AC774200A32278 /* Topic.swift */,
+				297177BD25AC774D00A32278 /* Topics.swift */,
 				297177AF25AAB80A00A32278 /* AuthModel.swift */,
 				297177A125A977DD00A32278 /* TestTableModel.swift */,
 			);
@@ -171,6 +182,7 @@
 				2971777125A8695C00A32278 /* FirstViewController.swift */,
 				2971777325A8695C00A32278 /* SecondViewController.swift */,
 				297177B725AC64A500A32278 /* ForumsViewController.swift */,
+				297177BF25AC7B8000A32278 /* TopicsViewController.swift */,
 				297177B325AC21BA00A32278 /* ProfileViewController.swift */,
 			);
 			path = Controller;
@@ -318,8 +330,11 @@
 			files = (
 				2971777425A8695C00A32278 /* SecondViewController.swift in Sources */,
 				297177A725AA9BA900A32278 /* SignUpViewController.swift in Sources */,
+				297177BA25AC66F200A32278 /* Categories.swift in Sources */,
+				297177BE25AC774D00A32278 /* Topics.swift in Sources */,
 				2971777225A8695C00A32278 /* FirstViewController.swift in Sources */,
 				2971776E25A8695C00A32278 /* AppDelegate.swift in Sources */,
+				297177BC25AC774200A32278 /* Topic.swift in Sources */,
 				297177A925AAB66A00A32278 /* AuthViewController.swift in Sources */,
 				297177AE25AAB76500A32278 /* Network.swift in Sources */,
 				297177B425AC21BA00A32278 /* ProfileViewController.swift in Sources */,
@@ -327,6 +342,7 @@
 				297177A225A977DD00A32278 /* TestTableModel.swift in Sources */,
 				297177B625AC56D500A32278 /* Category.swift in Sources */,
 				297177B825AC64A600A32278 /* ForumsViewController.swift in Sources */,
+				297177C025AC7B8000A32278 /* TopicsViewController.swift in Sources */,
 				2971777025A8695C00A32278 /* SceneDelegate.swift in Sources */,
 				297177B025AAB80A00A32278 /* AuthModel.swift in Sources */,
 				297177B225AC1B5F00A32278 /* User.swift in Sources */,

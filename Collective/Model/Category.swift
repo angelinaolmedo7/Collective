@@ -8,10 +8,7 @@
 
 import Foundation
 
-class Category: NSObject, URLSessionDataDelegate {
-    
-    weak var delegate: NetworkProtocol!
-    let urlPath = "http://www.collectiveapp.site/getcategories.php"
+class Category: NSObject {
     
     var cat_id: Int?
     var cat_name: String?
