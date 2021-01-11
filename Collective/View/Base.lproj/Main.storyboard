@@ -119,7 +119,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659.4202898550725" y="-320.08928571428572"/>
+            <point key="canvasLocation" x="1493" y="-430"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="sZF-I9-vwq">
+            <objects>
+                <viewController id="ruR-4X-y2a" customClass="ProfileViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZBW-e2-eRA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mFJ-gd-D2L">
+                                <rect key="frame" x="30" y="74" width="354" height="709"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgp-vU-Biz">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="709"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mFJ-gd-D2L" firstAttribute="leading" secondItem="gpN-AK-PnG" secondAttribute="leading" constant="30" id="7KE-8G-8wu"/>
+                            <constraint firstItem="mFJ-gd-D2L" firstAttribute="top" secondItem="gpN-AK-PnG" secondAttribute="top" constant="30" id="HyO-Gb-gyw"/>
+                            <constraint firstItem="gpN-AK-PnG" firstAttribute="trailing" secondItem="mFJ-gd-D2L" secondAttribute="trailing" constant="30" id="RKH-iu-l5C"/>
+                            <constraint firstItem="gpN-AK-PnG" firstAttribute="bottom" secondItem="mFJ-gd-D2L" secondAttribute="bottom" constant="30" id="fv2-kp-bQG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gpN-AK-PnG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" image="person.fill" catalog="system" id="21v-7q-gpS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pu-XZ-V9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="262"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -160,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="2228" y="-99"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="g1A-V2-E4N">
@@ -170,10 +205,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvr-2r-8yo">
-                                <rect key="frame" x="21" y="832" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ignore"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvr-2r-8yo">
+                                <rect key="frame" x="5" y="837" width="30" height="30"/>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="presentation" identifier="signin" modalPresentationStyle="fullScreen" id="Yol-xj-Fap"/>
                                 </connections>
@@ -246,6 +279,8 @@
                         <constraints>
                             <constraint firstItem="YRJ-iJ-qjM" firstAttribute="leading" secondItem="ngS-Au-j5N" secondAttribute="leading" constant="30" id="4k2-q3-7cj"/>
                             <constraint firstItem="YRJ-iJ-qjM" firstAttribute="top" secondItem="ngS-Au-j5N" secondAttribute="top" constant="30" id="6xf-vL-Lvr"/>
+                            <constraint firstItem="Lvr-2r-8yo" firstAttribute="bottom" secondItem="ngS-Au-j5N" secondAttribute="bottom" constant="5" id="A4w-cr-qHi"/>
+                            <constraint firstItem="Lvr-2r-8yo" firstAttribute="leading" secondItem="ngS-Au-j5N" secondAttribute="leading" constant="5" id="AdX-QO-g44"/>
                             <constraint firstItem="ngS-Au-j5N" firstAttribute="trailing" secondItem="YRJ-iJ-qjM" secondAttribute="trailing" constant="30" id="c5w-N8-e52"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ngS-Au-j5N"/>
@@ -272,6 +307,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="ruR-4X-y2a" kind="relationship" relationship="viewControllers" id="4KR-Lf-6Kd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -301,6 +337,7 @@
     <resources>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="first" width="30" height="30"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
