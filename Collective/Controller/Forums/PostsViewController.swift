@@ -11,6 +11,7 @@ import UIKit
 
 class PostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NetworkProtocol {
     
+    var user: User = User()
     var selectedTopic : Topic = Topic()
     var feedItems: NSArray = NSArray()
     

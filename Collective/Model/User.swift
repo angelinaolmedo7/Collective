@@ -68,21 +68,19 @@ class User: NSObject {
         var jsonElement = NSDictionary()
         jsonElement = jsonResult as! NSDictionary
            
-        let user = User()
-           
         //the following ensures none of the JsonElement values are nil through optional binding
         if let user_id = jsonElement["user_id"] as? NSString,
             let user_name = jsonElement["user_name"] as? NSString,
 //                let uesr_date = jsonElement["user_date"] as? Date,
             let user_level = jsonElement["user_level"] as? NSString
         {
-            user.user_id = user_id.integerValue
-            user.user_name = user_name as String
+            self.user_id = user_id.integerValue
+            self.user_name = user_name as String
 //    //            user.user_date = user_date
-            user.user_level = user_level.integerValue
+            self.user_level = user_level.integerValue
                
         }
         
-    print(user.user_name)
+    print(self.user_name)
     }
 }

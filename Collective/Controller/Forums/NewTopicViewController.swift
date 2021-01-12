@@ -1,39 +1,30 @@
 //
-//  AuthViewController.swift
+//  NewTopicViewController.swift
 //  Collective
 //
-//  Created by Angelina Olmedo on 1/9/21.
+//  Created by Angelina Olmedo on 1/11/21.
 //  Copyright © 2021 Angelina Olmedo. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class AuthViewController: UIViewController {
+class NewTopicViewController: UIViewController {
     
+    var selectedCategory : Category = Category()
     
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    var user = User()
+    var user: User = User()
+    @IBOutlet weak var subjectTextField: UITextField!
+    @IBOutlet weak var contentTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.statusLabel.text = ""
+        print(selectedCategory.cat_name as Any)
     }
     
-    @IBAction func signInPressed(_ sender: Any) {
-        signInUser()
-        self.user.fetchuser(name: usernameTextField.text ?? "")
-    }
-    
-    
-    func signInUser() {
-        self.statusLabel.text = "Signing in..."
-        
-        let urlPath = "http://www.collectiveapp.site/signin.php"
+    func createTopicInDB() {
+        let urlPath = "http://www.collectiveapp.site/newtopic.php"
         
         var request = URLRequest(url: URL(string: urlPath)!)
         request.httpMethod = "POST"
@@ -41,8 +32,10 @@ class AuthViewController: UIViewController {
         var dataString = ""
         
         // the POST string has entries separated by &
-        dataString = dataString + "&user_name=\(usernameTextField.text ?? "")"
-        dataString = dataString + "&user_pass=\(passwordTextField.text ?? "")"
+        dataString = dataString + "&topic_subject=\(subjectTextField.text ?? "NO SUBJECT")"
+        dataString = dataString + "&topic_by=\(user.user_id!)"
+        dataString = dataString + "&topic_cat=\(selectedCategory.cat_id!)"
+        dataString = dataString + "&post_content=\(contentTextField.text ?? subjectTextField.text ?? "NO CONTENT")"
         
         // convert the post string to utf8 format
         let dataD = dataString.data(using: .utf8) // convert to utf8 string
@@ -65,26 +58,16 @@ class AuthViewController: UIViewController {
                 {
                     if let unwrappedData = data {
                         let returnedData = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue) // Response from web server hosting the database
-                        if let returnedData = returnedData {
-                            DispatchQueue.main.async { // i think?
-                                if returnedData == "1" {
-                                    // log in
-                                    self.performSegue(withIdentifier: "signin", sender: nil)
-                                }
-                                else if returnedData == "0"{
-                                    // incorrect
-                                    self.statusLabel.text = "Username and password do not match. Please try again."
-                                }
-                                else {
-                                    self.statusLabel.text = "Something's gone wrong on our end. Please try again later."
-                                }
-                            }
-                        }
+                        print(returnedData as Any)
                     }
                 }
             }
             uploadJob.resume()
         }
     }
+
+
 }
+
+
 

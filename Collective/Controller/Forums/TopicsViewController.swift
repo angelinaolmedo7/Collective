@@ -11,6 +11,7 @@ import UIKit
 
 class TopicsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NetworkProtocol {
     
+    var user: User = User()
     var selectedCategory : Category = Category()
     var feedItems: NSArray = NSArray()
     var selectedItem : Topic = Topic()
@@ -56,17 +57,25 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         // Set selected location to var
         selectedItem = feedItems[indexPath.row] as! Topic
         // Manually call segue to detail view controller
-        self.performSegue(withIdentifier: "postSegue", sender: self)
+        self.performSegue(withIdentifier: "postSegue", sender: "TopicCell")
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (sender as? String) == "TopicCell" {
+            // Get reference to the destination view controller
+            let detailVC  = segue.destination as! PostsViewController
+            // Set the property to the selected location so when the view for
+            // detail view controller loads, it can access that property to get the feeditem obj
+            detailVC.user = user
+            detailVC.selectedTopic = selectedItem
+        }
+        else {
+            let detailVC  = segue.destination as! NewTopicViewController
+            detailVC.user = user
+            detailVC.selectedCategory = selectedCategory
+        }
         
-        // Get reference to the destination view controller
-        let detailVC  = segue.destination as! PostsViewController
-        // Set the property to the selected location so when the view for
-        // detail view controller loads, it can access that property to get the feeditem obj
-        detailVC.selectedTopic = selectedItem
     }
 }
 

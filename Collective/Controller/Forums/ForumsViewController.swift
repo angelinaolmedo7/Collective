@@ -11,6 +11,7 @@ import UIKit
 
 class ForumsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NetworkProtocol {
     
+    var user: User = User()
     var feedItems: NSArray = NSArray()
     var selectedItem : Category = Category()
 
@@ -18,6 +19,8 @@ class ForumsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        user = (self.presentingViewController as! AuthViewController).user
         
         // Do any additional setup after loading the view.
         self.listTableView.delegate = self
@@ -65,6 +68,7 @@ class ForumsViewController: UIViewController, UITableViewDataSource, UITableView
         let detailVC  = segue.destination as! TopicsViewController
         // Set the property to the selected location so when the view for
         // detail view controller loads, it can access that property to get the feeditem obj
+        detailVC.user = user
         detailVC.selectedCategory = selectedItem
     }
 }

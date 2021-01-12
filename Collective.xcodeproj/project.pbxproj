@@ -37,6 +37,7 @@
 		297177CC25AC9DB400A32278 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177CB25AC9DB400A32278 /* Items.swift */; };
 		297177CE25AC9F2900A32278 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177CD25AC9F2900A32278 /* CategoriesViewController.swift */; };
 		297177D025AC9F7600A32278 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177CF25AC9F7600A32278 /* ItemsViewController.swift */; };
+		297177D225AD5C3400A32278 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D125AD5C3400A32278 /* NewTopicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		297177CB25AC9DB400A32278 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		297177CD25AC9F2900A32278 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		297177CF25AC9F7600A32278 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		297177D125AD5C3400A32278 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +200,8 @@
 				2971777325A8695C00A32278 /* SecondViewController.swift */,
 				297177CD25AC9F2900A32278 /* CategoriesViewController.swift */,
 				297177CF25AC9F7600A32278 /* ItemsViewController.swift */,
-				297177C725AC8E3600A32278 /* Forums */,
 				297177B325AC21BA00A32278 /* ProfileViewController.swift */,
+				297177C725AC8E3600A32278 /* Forums */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 			children = (
 				297177B725AC64A500A32278 /* ForumsViewController.swift */,
 				297177BF25AC7B8000A32278 /* TopicsViewController.swift */,
+				297177D125AD5C3400A32278 /* NewTopicViewController.swift */,
 				297177C525AC85ED00A32278 /* PostsViewController.swift */,
 			);
 			path = Forums;
@@ -378,6 +381,7 @@
 				297177A925AAB66A00A32278 /* AuthViewController.swift in Sources */,
 				297177AE25AAB76500A32278 /* Network.swift in Sources */,
 				297177B425AC21BA00A32278 /* ProfileViewController.swift in Sources */,
+				297177D225AD5C3400A32278 /* NewTopicViewController.swift in Sources */,
 				297177CC25AC9DB400A32278 /* Items.swift in Sources */,
 				297177CE25AC9F2900A32278 /* CategoriesViewController.swift in Sources */,
 				297177A025A977C900A32278 /* HomeModel.swift in Sources */,

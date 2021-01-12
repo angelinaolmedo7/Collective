@@ -70,7 +70,7 @@ class Topics: NSObject, URLSessionDataDelegate {
         }
         
         DispatchQueue.main.async(execute: { () -> Void in
-            self.delegate.itemsDownloaded(items: topics)
+            self.delegate.itemsDownloaded(items: topics )
         })
     }
 }

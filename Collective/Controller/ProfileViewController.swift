@@ -11,12 +11,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var user = User()
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user.fetchuser(name: "1")
         
+        user = (self.presentingViewController as! AuthViewController).user
+        usernameLabel.text = user.user_name
     }
     
 }
