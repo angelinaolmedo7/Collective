@@ -723,6 +723,8 @@
                         <outlet property="catLabel" destination="bFh-7c-6t0" id="Jln-L2-0fG"/>
                         <outlet property="leaderLabel" destination="LVh-1G-yVl" id="Yqe-wh-iN1"/>
                         <outlet property="listTableView" destination="GDo-0J-8qH" id="g4q-5D-mNl"/>
+                        <outlet property="progressBar" destination="eqL-gf-DdE" id="phb-Ru-Tue"/>
+                        <outlet property="userProgressLabel" destination="7md-99-e5S" id="yLo-WA-Jim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJP-fs-2Le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

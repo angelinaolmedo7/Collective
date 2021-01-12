@@ -18,6 +18,8 @@ class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var catLabel: UILabel!
     @IBOutlet weak var leaderLabel: UILabel!
+    @IBOutlet weak var userProgressLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,6 @@ class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func setLeader() {
-        var leader_id: Int
-        
         let urlPath = "http://www.collectiveapp.site/getleader.php"
         let url: URL = URL(string: urlPath)!
         var request = URLRequest(url: url)
@@ -69,18 +69,60 @@ class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 if let user_id = jsonElement["instance_user"] as? NSString
                 {
                     DispatchQueue.main.async {
-                        self.leaderLabel.text = "Current category leader: #\(user_id as String)"
+                        self.leaderLabel.text = "Current category leader: User #\(user_id as String)"
                     }
                 }
             }
            }
            task.resume()
+    }
+    
+    func setYourCount() {
+        let urlPath = "http://www.collectiveapp.site/getinstancecount.php"
+        let url: URL = URL(string: urlPath)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
         
+        var dataString = "&instance_user=\(user.user_id!)"
+        dataString = dataString + "&instance_cat=\(selectedCategory.cat_id!)"
+        // convert the post string to utf8 format
+        let dataD = dataString.data(using: .utf8) // convert to utf8 string
+        
+        let task = URLSession.shared.uploadTask(with: request, from: dataD)
+        {
+            data, response, error in
+            if error != nil {
+                print("Failed to download data")
+            } else {
+                print("Data downloaded")
+                var jsonResult = NSObject() // change to object?
+                do{
+                    jsonResult = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments) as! NSObject
+                   
+                } catch let error as NSError {
+                    print(error)
+                }
+                print(jsonResult)
+                var jsonElement = NSDictionary()
+                jsonElement = jsonResult as! NSDictionary
+                   
+                //the following ensures none of the JsonElement values are nil through optional binding
+                if let count = jsonElement["COUNT(*)"] as? NSString
+                {
+                    DispatchQueue.main.async {
+                        self.userProgressLabel.text = "You have: \(count.integerValue - 2)/\(self.feedItems.count)"
+                        self.progressBar.progress = ( Float(count.integerValue-2)/Float(self.feedItems.count))
+                    }
+                }
+            }
+           }
+           task.resume()
     }
 
     func itemsDownloaded(items: NSArray) {
-            feedItems = items
-            self.listTableView.reloadData()
+        feedItems = items
+        self.setYourCount()
+        self.listTableView.reloadData()
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
