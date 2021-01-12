@@ -29,6 +29,14 @@ class TopicsViewController: UIViewController, UITableViewDataSource, UITableView
         topics.delegate = self
         topics.downloadItems(topic_cat: selectedCategory.cat_id ?? 3)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let topics = Topics()
+        topics.delegate = self
+        topics.downloadItems(topic_cat: selectedCategory.cat_id ?? 3)
+    }
 
     func itemsDownloaded(items: NSArray) {
             feedItems = items

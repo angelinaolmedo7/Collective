@@ -15,15 +15,23 @@ class NewTopicViewController: UIViewController {
     
     var user: User = User()
     @IBOutlet weak var subjectTextField: UITextField!
-    @IBOutlet weak var contentTextField: UITextView!
+    @IBOutlet weak var createButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        createButton.isEnabled = true
+        createButton.setTitle("Creating topic...", for: .disabled)
         print(selectedCategory.cat_name as Any)
     }
     
+    @IBAction func createButtonPressed(_ sender: Any) {
+        createTopicInDB()
+    }
+    
     func createTopicInDB() {
+        createButton.isEnabled = false
+        
         let urlPath = "http://www.collectiveapp.site/newtopic.php"
         
         var request = URLRequest(url: URL(string: urlPath)!)
@@ -33,9 +41,8 @@ class NewTopicViewController: UIViewController {
         
         // the POST string has entries separated by &
         dataString = dataString + "&topic_subject=\(subjectTextField.text ?? "NO SUBJECT")"
-        dataString = dataString + "&topic_by=\(user.user_id!)"
         dataString = dataString + "&topic_cat=\(selectedCategory.cat_id!)"
-        dataString = dataString + "&post_content=\(contentTextField.text ?? subjectTextField.text ?? "NO CONTENT")"
+        dataString = dataString + "&topic_by=\(user.user_id!)"
         
         // convert the post string to utf8 format
         let dataD = dataString.data(using: .utf8) // convert to utf8 string
@@ -59,6 +66,9 @@ class NewTopicViewController: UIViewController {
                     if let unwrappedData = data {
                         let returnedData = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue) // Response from web server hosting the database
                         print(returnedData as Any)
+                        DispatchQueue.main.async {
+                        self.navigationController!.popViewController(animated: true)
+                        }
                     }
                 }
             }

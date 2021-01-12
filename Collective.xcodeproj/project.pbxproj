@@ -38,6 +38,7 @@
 		297177CE25AC9F2900A32278 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177CD25AC9F2900A32278 /* CategoriesViewController.swift */; };
 		297177D025AC9F7600A32278 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177CF25AC9F7600A32278 /* ItemsViewController.swift */; };
 		297177D225AD5C3400A32278 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D125AD5C3400A32278 /* NewTopicViewController.swift */; };
+		297177D425AD73C600A32278 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D325AD73C600A32278 /* NewPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		297177CD25AC9F2900A32278 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		297177CF25AC9F7600A32278 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		297177D125AD5C3400A32278 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
+		297177D325AD73C600A32278 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				297177BF25AC7B8000A32278 /* TopicsViewController.swift */,
 				297177D125AD5C3400A32278 /* NewTopicViewController.swift */,
 				297177C525AC85ED00A32278 /* PostsViewController.swift */,
+				297177D325AD73C600A32278 /* NewPostViewController.swift */,
 			);
 			path = Forums;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				297177C025AC7B8000A32278 /* TopicsViewController.swift in Sources */,
 				297177D025AC9F7600A32278 /* ItemsViewController.swift in Sources */,
 				2971777025A8695C00A32278 /* SceneDelegate.swift in Sources */,
+				297177D425AD73C600A32278 /* NewPostViewController.swift in Sources */,
 				297177C225AC83A700A32278 /* Post.swift in Sources */,
 				297177B025AAB80A00A32278 /* AuthModel.swift in Sources */,
 				297177B225AC1B5F00A32278 /* User.swift in Sources */,
