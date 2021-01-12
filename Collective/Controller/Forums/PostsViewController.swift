@@ -53,11 +53,11 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Retrieve cell
         let cellIdentifier: String = "PostCell"
-        let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        let myCell: PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)! as! PostTableViewCell
         // Get the category to be shown
         let item: Post = feedItems[indexPath.row] as! Post
         // Get references to labels of cell
-        myCell.textLabel!.text = item.post_content
+        myCell.setDetails(post: item)
             
         return myCell
     }

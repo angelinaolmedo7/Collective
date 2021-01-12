@@ -16,6 +16,8 @@ class Post: NSObject {
     var post_topic: Int? // topic id number
     var post_by: Int? // user id number
     
+    var post_by_name: String = "UNKNOWN USER"
+    
     
     //empty constructor
     override init()

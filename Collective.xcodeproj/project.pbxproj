@@ -40,6 +40,7 @@
 		297177D225AD5C3400A32278 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D125AD5C3400A32278 /* NewTopicViewController.swift */; };
 		297177D425AD73C600A32278 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D325AD73C600A32278 /* NewPostViewController.swift */; };
 		297177D725AD839800A32278 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D525AD839700A32278 /* ItemTableViewCell.swift */; };
+		297177DA25ADE36F00A32278 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D925ADE36F00A32278 /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		297177D125AD5C3400A32278 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		297177D325AD73C600A32278 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		297177D525AD839700A32278 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		297177D925ADE36F00A32278 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			children = (
 				2971777525A8695C00A32278 /* Main.storyboard */,
 				297177D525AD839700A32278 /* ItemTableViewCell.swift */,
+				297177D925ADE36F00A32278 /* PostTableViewCell.swift */,
 				2971777A25A8695F00A32278 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -379,6 +382,7 @@
 				297177A725AA9BA900A32278 /* SignUpViewController.swift in Sources */,
 				297177BA25AC66F200A32278 /* Categories.swift in Sources */,
 				297177BE25AC774D00A32278 /* Topics.swift in Sources */,
+				297177DA25ADE36F00A32278 /* PostTableViewCell.swift in Sources */,
 				2971777225A8695C00A32278 /* FirstViewController.swift in Sources */,
 				297177CA25AC9DAB00A32278 /* Item.swift in Sources */,
 				2971776E25A8695C00A32278 /* AppDelegate.swift in Sources */,
