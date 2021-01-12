@@ -52,18 +52,22 @@ class Posts: NSObject, URLSessionDataDelegate {
         {
             jsonElement = jsonResult[i] as! NSDictionary
             
+            print(jsonElement)
+            
             let post = Post()
             
             //the following ensures none of the JsonElement values are nil through optional binding
             if let post_id = jsonElement["post_id"] as? NSString,
                 let post_content = jsonElement["post_content"] as? String,
                 let post_topic = jsonElement["post_topic"] as? NSString,
-                let post_by = jsonElement["post_by"] as? NSString
+                let post_by = jsonElement["post_by"] as? NSString,
+                let post_by_name = jsonElement["user_name"] as? String
             {
                 post.post_id = post_id.integerValue
                 post.post_content = post_content
                 post.post_topic = post_topic.integerValue
                 post.post_by = post_by.integerValue
+                post.post_by_name = post_by_name
             }
             posts.add(post)
         }

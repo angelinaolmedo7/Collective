@@ -31,5 +31,14 @@ class Post: NSObject {
         self.post_by = post_by
         
     }
+    init(post_id: Int, post_content: String, post_topic: Int, post_by: Int, post_by_name: String) {
+        
+        self.post_id = post_id
+        self.post_content = post_content
+        self.post_topic = post_topic
+        self.post_by = post_by
+        self.post_by_name = post_by_name
+        
+    }
 }
 
