@@ -31,6 +31,14 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         posts.delegate = self
         posts.downloadItems(post_topic: selectedTopic.topic_id)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let posts = Posts()
+        posts.delegate = self
+        posts.downloadItems(post_topic: selectedTopic.topic_id)
+    }
 
     func itemsDownloaded(items: NSArray) {
             feedItems = items
@@ -52,6 +60,13 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         myCell.textLabel!.text = item.post_content
             
         return myCell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let detailVC  = segue.destination as! NewPostViewController
+        detailVC.user = user
+        detailVC.selectedTopic = selectedTopic
     }
 }
 

@@ -682,7 +682,7 @@
         <!--New Post-->
         <scene sceneID="ggF-VL-gYl">
             <objects>
-                <viewController id="Xpu-rT-6gh" customClass="NewTopicViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xpu-rT-6gh" customClass="NewPostViewController" customModule="Collective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cCa-BO-MBn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -705,7 +705,7 @@
                                         <rect key="frame" x="0.0" y="598" width="374" height="30"/>
                                         <state key="normal" title="Post Reply"/>
                                         <connections>
-                                            <action selector="createButtonPressed:" destination="Xpu-rT-6gh" eventType="touchUpInside" id="DFf-wL-p5C"/>
+                                            <action selector="createButtonPressed:" destination="Xpu-rT-6gh" eventType="touchUpInside" id="9yF-fZ-IBS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -722,8 +722,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="TdV-Sn-fuY"/>
                     <connections>
-                        <outlet property="createButton" destination="hPw-NJ-Jow" id="e3b-B9-hCM"/>
-                        <outlet property="subjectTextField" destination="D9o-A8-Inf" id="Y4u-td-sKT"/>
+                        <outlet property="contentField" destination="D9o-A8-Inf" id="Pu4-Cg-7dz"/>
+                        <outlet property="createButton" destination="hPw-NJ-Jow" id="BiD-Vv-eGO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb0-oe-Ci1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
