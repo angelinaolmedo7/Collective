@@ -26,7 +26,6 @@ class AuthViewController: UIViewController {
     
     @IBAction func signInPressed(_ sender: Any) {
         signInUser()
-        self.user.fetchuser(name: usernameTextField.text ?? "")
     }
     
     
@@ -48,42 +47,43 @@ class AuthViewController: UIViewController {
         let dataD = dataString.data(using: .utf8) // convert to utf8 string
         do
         {
-            // the upload task, uploadJob, is defined here
-            let uploadJob = URLSession.shared.uploadTask(with: request, from: dataD)  // h8 the name uploadjob change later
+            let task = URLSession.shared.uploadTask(with: request, from: dataD)
             {
                 data, response, error in
                 if error != nil {
-                    // display an alert if there is an error inside the DispatchQueue.main.async
-                    DispatchQueue.main.async
-                    {
-                            let alert = UIAlertController(title: "Connection Failed", message: "Looks like the connection to the server didn't work. Do you have Internet access?", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
+                    print("Failed to download data")
+                } else {
+                    print("Data downloaded")
+                    var jsonResult = NSObject() // change to object?
+                    do{
+                        jsonResult = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.allowFragments) as! NSObject
+                       
+                    } catch let error as NSError {
+                        print(error)
                     }
-                }
-                else
-                {
-                    if let unwrappedData = data {
-                        let returnedData = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue) // Response from web server hosting the database
-                        if let returnedData = returnedData {
-                            DispatchQueue.main.async { // i think?
-                                if returnedData == "1" {
-                                    // log in
-                                    self.performSegue(withIdentifier: "signin", sender: nil)
-                                }
-                                else if returnedData == "0"{
-                                    // incorrect
-                                    self.statusLabel.text = "Username and password do not match. Please try again."
-                                }
-                                else {
-                                    self.statusLabel.text = "Something's gone wrong on our end. Please try again later."
-                                }
+                   
+                    DispatchQueue.main.async {
+                        if let jsonElement = jsonResult as? NSDictionary {
+                            if let user_id = jsonElement["user_id"] as? NSString,
+                                let user_name = jsonElement["user_name"] as? NSString,
+                    //                let uesr_date = jsonElement["user_date"] as? Date,
+                                let user_level = jsonElement["user_level"] as? NSString
+                            {
+                                self.user.user_id = user_id.integerValue
+                                self.user.user_name = user_name as String
+                    //    //            user.user_date = user_date
+                                self.user.user_level = user_level.integerValue
+                                   
                             }
+                            self.performSegue(withIdentifier: "signin", sender: nil)
+                        }
+                        else {
+                            self.statusLabel.text = "Username and password do not match. Please try again."
                         }
                     }
                 }
             }
-            uploadJob.resume()
+                task.resume()
         }
     }
 }
