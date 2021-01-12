@@ -11,10 +11,12 @@ import UIKit
 
 class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NetworkProtocol {
     
+    var user: User = User()
     var selectedCategory : Category = Category()
     var feedItems: NSArray = NSArray()
 
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var catLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
+        
+        catLabel.text = selectedCategory.cat_name ?? "NAME"
         
         let items = Items()
         items.delegate = self
@@ -41,11 +45,11 @@ class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Retrieve cell
         let cellIdentifier: String = "ItemCell"
-        let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        let myCell: ItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)! as! ItemTableViewCell
         // Get the item to be shown
         let item: Item = feedItems[indexPath.row] as! Item
         // Get references to labels of cell
-        myCell.textLabel!.text = item.item_name
+        myCell.setDetails(user: user, item: item)
             
         return myCell
     }

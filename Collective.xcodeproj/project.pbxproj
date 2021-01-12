@@ -39,6 +39,7 @@
 		297177D025AC9F7600A32278 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177CF25AC9F7600A32278 /* ItemsViewController.swift */; };
 		297177D225AD5C3400A32278 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D125AD5C3400A32278 /* NewTopicViewController.swift */; };
 		297177D425AD73C600A32278 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D325AD73C600A32278 /* NewPostViewController.swift */; };
+		297177D725AD839800A32278 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297177D525AD839700A32278 /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		297177CF25AC9F7600A32278 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		297177D125AD5C3400A32278 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicViewController.swift; sourceTree = "<group>"; };
 		297177D325AD73C600A32278 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		297177D525AD839700A32278 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				2971777525A8695C00A32278 /* Main.storyboard */,
+				297177D525AD839700A32278 /* ItemTableViewCell.swift */,
 				2971777A25A8695F00A32278 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -383,6 +386,7 @@
 				297177C425AC83B000A32278 /* Posts.swift in Sources */,
 				297177A925AAB66A00A32278 /* AuthViewController.swift in Sources */,
 				297177AE25AAB76500A32278 /* Network.swift in Sources */,
+				297177D725AD839800A32278 /* ItemTableViewCell.swift in Sources */,
 				297177B425AC21BA00A32278 /* ProfileViewController.swift in Sources */,
 				297177D225AD5C3400A32278 /* NewTopicViewController.swift in Sources */,
 				297177CC25AC9DB400A32278 /* Items.swift in Sources */,
