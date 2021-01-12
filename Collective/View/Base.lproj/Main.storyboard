@@ -721,6 +721,7 @@
                     <navigationItem key="navigationItem" title="Items" id="Wb0-8h-8x7"/>
                     <connections>
                         <outlet property="catLabel" destination="bFh-7c-6t0" id="Jln-L2-0fG"/>
+                        <outlet property="leaderLabel" destination="LVh-1G-yVl" id="Yqe-wh-iN1"/>
                         <outlet property="listTableView" destination="GDo-0J-8qH" id="g4q-5D-mNl"/>
                     </connections>
                 </viewController>
