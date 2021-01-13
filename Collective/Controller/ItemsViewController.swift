@@ -110,8 +110,8 @@ class ItemsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 if let count = jsonElement["COUNT(*)"] as? NSString
                 {
                     DispatchQueue.main.async {
-                        self.userProgressLabel.text = "You have: \(count.integerValue - 2)/\(self.feedItems.count)"
-                        self.progressBar.progress = ( Float(count.integerValue-2)/Float(self.feedItems.count))
+                        self.userProgressLabel.text = "You have: \(count.integerValue)/\(self.feedItems.count)"
+                        self.progressBar.progress = ( Float(count.integerValue)/Float(self.feedItems.count))
                     }
                 }
             }

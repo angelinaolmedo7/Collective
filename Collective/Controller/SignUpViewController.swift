@@ -58,6 +58,9 @@ class SignUpViewController: UIViewController {
                     if let unwrappedData = data {
                         let returnedData = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue) // Response from web server hosting the database
                         print(returnedData as Any)
+                        DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
             }
